@@ -62,7 +62,7 @@ function halfNumber(num){
 
 function percentOf(num1, num2){
     let percentage;
-    return getElementValue('answer').innerHTML = `${num1} is ${percentage = (num1 / num2) * 100}% of ${num2}.`
+    return getElementValue('answer').innerHTML = `${num1} is ${percentage = ((num1 / num2) * 100).toFixed(2)}% of ${num2}.`
 }
 
 function areaOfCircle(num){
