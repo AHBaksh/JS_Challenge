@@ -1,5 +1,5 @@
 function getElementValue(id){
-    console.log(idArr = id.split(' '))
+    
     return document.getElementById(id)
 }
 function clearText(text){
