@@ -5,8 +5,7 @@ function pluralise(){
     return document.getElementById('answer').innerHTML = 'Please enter a number and string'
   }
     if( typeof number !== 'number' || typeof word !== 'string'){
-        console.log(number)
-        console.log(word)
+    
 
         return document.getElementById('answer').innerHTML = 'Please enter a number and string'
 
