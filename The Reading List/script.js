@@ -1,31 +1,53 @@
-let evenOutput =document.getElementById('evenAnswer')
-let oddOutput =document.getElementById('oddAnswer')
+let booksArr = [
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    alreadyRead: true,
+  },
+  {
+    title: "The Lord of the Rings",
+    author: "J.R.R. Tolkien",
+    alreadyRead: true,
+  },
+  {
+    title: "Harry Potter and the Chamber of Secrets",
+    author: "J.K Rowling",
+    alreadyRead: false,
+  },
+];
 
-
-function clear(){
-    evenOutput.innerHTML = ''
-    oddOutput.innerHTML = ''
-}
-
-
-function evenOdd(){
-    let firstNum = Number(document.getElementById('firstTxt').value)
-    let secondNum = Number(document.getElementById('secondTxt').value)
-    clear()
-    if( isNaN(firstNum) || isNaN(secondNum)){
-        return evenOutput.innerHTML = 'Please only enter numbers'
-
+function allReadElements() {
+  for (let i = 0; i < booksArr.length; i++) {
+    if (booksArr[i].alreadyRead) {
+      let readElement = document.createElement("p");
+      readElement.innerHTML += `Title: ${booksArr[i].title} by the author ${booksArr[i].author}`;
+      document.getElementById("readContents").appendChild(readElement);
     }else{
-        for(let i = firstNum; i <= secondNum; i++){
-            if(i % 2 === 0){
-                evenOutput.innerHTML+=`${i} is even <br>`
-            }else{
-                oddOutput.innerHTML += `${i} is odd <br>`
-            }
-            
-        }
+        let readNotElement = document.createElement("p");
+        readNotElement.innerHTML += `Title: ${booksArr[i].title} by the author ${booksArr[i].author}`;
+        document.getElementById("notReadContents").appendChild(readNotElement);
     }
-    return 
   }
 
-  document.getElementById('runBtn').addEventListener('click', evenOdd)
+
+}
+
+function onClcikRead() {
+    let read = document.getElementById('readContents')
+    if( read.style.display ==='block'){
+        return read.style.display = 'none'
+    }
+      return read.style.display = 'block'
+    }
+
+function onClickNotRead(){
+    let notRead = document.getElementById('notReadContents')
+    if(notRead.style.display === 'block'){
+       return notRead.style.display ='none';
+    }
+       return notRead.style.display ='block'
+    }
+allReadElements()
+
+document.getElementById("read").addEventListener("click", onClcikRead);
+document.getElementById("notRead").addEventListener("click", onClickNotRead);

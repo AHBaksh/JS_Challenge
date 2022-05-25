@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" async></script>
+    <title>Lets Cook</title>
+  </head>
+  <body>
+    <main id="main">
+      <h1>Recipe</h1>
+      <h3>Click on the button to see a random recipe</h3>
+      <button id="cook">Lets Cook!</button>
+    </main>
+    <div id="modal">
+      <div id="modalContent">
+        <header class="header">
+          <div id="close">X</div>
+          <img id="img" src="" />
+          <div class="header-flex">
+            <h1 id="title"></h1>
+            <p id="description"></p>
+            <h4 id="serving"></h4>
+          </div>
+        </header>
+        <hr />
+        <content class="content">
+          <div class="ingredientsContainer">
+            <h3>Ingredients:</h3>
+            <div id="ingredients"></div>
+          </div>
+          <div class="directionContainer">
+            <h2>Directions:</h2>
+            <ol type="1" id="directions"></ol>
+            </ol>
+          </div>
+        </content>
+      </div>
+    </div>
+  </body>
+</html>
